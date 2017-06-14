@@ -21,7 +21,6 @@ Uma vez que as transformações geométricas no espaço são representadas por m
 */--------------------
 
 
-
 ----------------------
 glMatrixMode( GL_MODELVIEW );
 
