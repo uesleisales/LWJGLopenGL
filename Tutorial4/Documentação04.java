@@ -48,7 +48,6 @@ glPushMatrix();
 
 Desde que mudamos a posição da câmera quando o usuário pressionou uma tecla, precisamos mudar nossa matriz de câmera padrão.
 
-
 Primeiro, removemos a antiga matriz padrão fora da pilha para a matriz atual com glPopMatrix(). Em seguida, carregamos a matriz de identidade na matriz atual de modelview. Depois disso, traduzimos a matriz de modelview pelos deslocamentos da câmera, de modo que tudo se tornará relativo à câmera.
 
 
