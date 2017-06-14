@@ -280,7 +280,14 @@ Observe que desta vez, damos uma cor individual para cada vértice. Novamente, �
 */--------------------
 
 
-
+----------------------
+glfwSetKeyCallback(win, keyCallback = new Input());
+glfwGetKey(win, GLFW_KEY_Q);
+glfwGetKey(win, GLFW_KEY_E);
+----------------------/*
+Neste tutorial utilizamos uma classe Input para auxilar a verificação das teclas pressionadas pelo usuário.
+*/--------------------	
+	
 
 
 ----------------------
