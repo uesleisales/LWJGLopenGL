@@ -2,12 +2,12 @@ import static org.lwjgl.glfw.GLFW.*;
 
 import static org.lwjgl.opengl.GL11.*;
 
-
 import org.lwjgl.glfw.GLFWKeyCallback;
 
 import org.lwjgl.opengl.GL;
 
 import input.Input;
+
 
 
 public class Tutorial04 {
@@ -24,9 +24,7 @@ private GLFWKeyCallback keyCallback;
 
 
 public Tutorial04() {
-
    
-
         if (!glfwInit()) {
 
             System.err.println("Falha ao inicializar GLFW!");
@@ -42,9 +40,6 @@ public Tutorial04() {
         //Primeiro 0 serve para permitir que mudemos a tela para Tela cheia. (Caso queira, substituir 0 por glfwGetPrimaryMonitor()
 
 
-        
-
-        
 
         glfwShowWindow(win);
 
@@ -60,15 +55,9 @@ public Tutorial04() {
 
         initGL();
 
-        
 
         glfwSetKeyCallback(win, keyCallback = new Input());
 
-        
-
-      
-
-        
 
         while (!glfwWindowShouldClose(win)) {
 
@@ -76,28 +65,17 @@ public Tutorial04() {
 
             glClear(GL_COLOR_BUFFER_BIT);           
 
-           
-
-            
-
             glMatrixMode( GL_MODELVIEW );
 
             glPopMatrix();
-
-            
 
             //Salva a matrix padrão novamente
 
             glPushMatrix();
 
-            
-
             glTranslatef( SCREEN_WIDTH / 2.f, SCREEN_HEIGHT / 2.f, 0.f );
 
             
-
-            
-
             //Quadrado vermelho
 
             glBegin( GL_QUADS );
@@ -180,15 +158,9 @@ public Tutorial04() {
 
             glEnd();
 
-            
-
            //Precisa de 2 contextos(buffers) para trocar de um para outro, um é mostrado na tela, enquanto o OpenGL desenha no outro
 
            glfwSwapBuffers(win);
-
-            
-
-           
 
            //Move de posição de renderização da câmera quando o usuário pressiona w/a/s/d
 
