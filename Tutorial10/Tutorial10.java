@@ -39,7 +39,6 @@ public class Tutorial10 {
         	glfwPollEvents();
                        
                        
-        	
     		IntBuffer width = BufferUtils.createIntBuffer(1);
     		IntBuffer height = BufferUtils.createIntBuffer(1);
     		IntBuffer comp = BufferUtils.createIntBuffer(1);		
