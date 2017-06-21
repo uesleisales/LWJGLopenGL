@@ -1,7 +1,5 @@
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL;
-//import org.lwjgl.opengl.GLContext;
-//import org.lwjgl.system.MemoryUtil;
 import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
 
@@ -49,7 +47,7 @@ public class Tutorial09 {
 
     		
             // A cor que estamos procurando
-    		// BRANCO
+    	    	// BRANCO
             byte REF_R = (byte)255;
             byte REF_G = (byte)255;
             byte REF_B = (byte)255;
@@ -73,7 +71,7 @@ public class Tutorial09 {
             
             
             // A cor que estamos procurando
-            // PRETO
+           	 // PRETO
             byte REF_R2 = (byte)0;
             byte REF_G2 = (byte)0;
             byte REF_B2 = (byte)0;
@@ -100,7 +98,7 @@ public class Tutorial09 {
             
             
             // A cor que estamos procurando
-            // CYAN
+            	// CYAN
             byte REF_R3 = (byte)0;
             byte REF_G3 = (byte)255;
             byte REF_B3 = (byte)255;
@@ -121,7 +119,6 @@ public class Tutorial09 {
                     data.put(i + 3, (byte)255);
                 }
             } 
-            
             
             
             
