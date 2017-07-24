@@ -23,8 +23,11 @@ public static float auxX= 0;
 public static int contadorX= 1; 
 public static float auxY= 0; 
 public static int contadorY= 1; 
+public static int contadorR= 1; 
+public static int velocidade= 10000; 
 public static float replaceX= 0; 
 public static float replaceY= 0; 
+public static float replaceR= 0;
 public static float auxX1= 0; 
 
 
@@ -69,89 +72,48 @@ public static float auxX1= 0;
               glMatrixMode(GL_MODELVIEW);
               glLoadIdentity();
               
-            /* glfwPollEvents();
-            glClear(GL_COLOR_BUFFER_BIT);        
-            glRotatef(0.01f,0.0f,0.0f,1.0f); 
-            
-            glPushMatrix();
-            */
-            
-            
-            //glPopMatrix();
-           
-            
-            
-           //  glPushMatrix();
-           // glfwPollEvents();
-           // glClear(GL_COLOR_BUFFER_BIT); 
-            
-            
-          
-            /*glTranslatef(0.f , 0.f , -1.f);
-            glRotatef(0.01f,0.0f,0.0f,1.0f); 
-            glTranslatef(0.f , 0.f , 1.f);
-            */
-      
-            /*if (i<300.f){
-        		i+=0.01f;
-        	}     
-            */
+
             
               Vector3f square = new Vector3f(quadradoX + 0.025f, quadradoY - 0.025f, 0);
               Vector3f triangle = new Vector3f(0.0f, 0.1f, 0);  
               double angle = Math.toDegrees(square.angle(triangle));
               
-              
-            /*if(quadradoX > 0){
-            	auxX = 	quadradoX / 10000; 
-            	
-            	if(contadorX < 10000){            	 
-            	replaceX = auxX * contadorX;
-            	contadorX = contadorX + 1;            	
-              }
-            }
-            */
+
             
             if(quadradoX < 0 || quadradoX > 0){
-            	auxX = 	quadradoX / 10000; 
+            	auxX = 	quadradoX / velocidade; 
             	
-            	if(contadorX < 10000){            	 
+            	if(contadorX < velocidade){            	 
             	replaceX = auxX * contadorX;
             	contadorX = contadorX + 1;            	
               }
             }
                        
-//////////////////////////
-            
-           /* if(quadradoY > 0){
-            	auxY = 	quadradoY / 10000; 
-            	
-            	if(contadorY < 10000){            	 
-            	replaceY = auxY * contadorY;
-            	contadorY = contadorY + 1;            	
-              }
-            }
-        */
+
             if(quadradoY < 0 || quadradoY > 0){
-            	auxY = 	quadradoY / 10000; 
+            	auxY = 	quadradoY / velocidade; 
             	
-            	if(contadorY < 10000){            	 
+            	if(contadorY < velocidade){            	 
             	replaceY = auxY * contadorY;
             	contadorY = contadorY + 1;            	
               }
             }
+            
+            if(contadorR < velocidade){            	 
+            	replaceR = ((float)angle/velocidade) * contadorR;
+            	contadorR = contadorR + 1;            	
+              }
  
             
 glPushMatrix ( ); // (salva a matrix) para mover o objeto independente do resto da cena 
 
-	/*
+/*
 	if(quadradoX > 0){
-	glRotatef ((float)-angle, 0.f, 0.f, 1.f );	
+	glRotatef (-replaceR, 0.f, 0.f, 1.f );	
 	}else{
-	glRotatef ((float)angle, 0.f, 0.f, 1.f );	
+	glRotatef (replaceR, 0.f, 0.f, 1.f );	
 	}
-	*/
-
+*/
 
 	glTranslatef (replaceX+0.025f, replaceY-0.1f, 0.f);
 	
@@ -164,14 +126,6 @@ glPushMatrix ( ); // (salva a matrix) para mover o objeto independente do resto 
 
 glPopMatrix ( ); // (carrega a ultima matrix salva) volta para o resto da cena
          	
-
-            
-           // glPopMatrix();
-            
-            
-        	//System.out.println(quadradoX);
-        	//System.out.println(quadradoY);
-        	
 
 glBegin(GL_QUADS);
 glColor3f( 0.f, 0.f, 1.f );
