@@ -15,6 +15,9 @@ int SCREEN_HEIGHT = 480;
 int SCREEN_FPS = 60;
 
 public static float i= 1.f;  
+
+public static float testex= 0; 
+public static float testey= 0; 
     public Desafio01(){
    
         if (!glfwInit()) {
@@ -50,7 +53,10 @@ public static float i= 1.f;
         	
         	  glfwPollEvents();
               glClear(GL_COLOR_BUFFER_BIT); 
-           /* glfwPollEvents();
+              glMatrixMode(GL_MODELVIEW);
+              glLoadIdentity();
+              
+            /* glfwPollEvents();
             glClear(GL_COLOR_BUFFER_BIT);        
             glRotatef(0.01f,0.0f,0.0f,1.0f); 
             
@@ -74,11 +80,11 @@ public static float i= 1.f;
            
             
             
-          //  glPushMatrix();
+           //  glPushMatrix();
            // glfwPollEvents();
            // glClear(GL_COLOR_BUFFER_BIT); 
             
-            glMatrixMode(GL_MODELVIEW);
+            
           
             /*glTranslatef(0.f , 0.f , -1.f);
             glRotatef(0.01f,0.0f,0.0f,1.0f); 
@@ -89,10 +95,30 @@ public static float i= 1.f;
         		i+=0.01f;
         	}     
             
+            if(testex < finalX){
+            	testex += 0.00001f;
+            }
+            
+            
+            if(testex > finalX){
+            	testex -= 0.00001f;
+            }
+            
+            if(testey < finalY){
+            	testey += 0.00001f;
+            }
+
+            
+            if(testey > finalY){
+            	testey -= 0.00001f;
+            }
+            
+        
 glPushMatrix ( ); // (salva a matrix) para mover o objeto independente do resto da cena 
 
-	glRotatef ( 10.f+i, 0.f, 0.f, 1.f );
-	
+	//glRotatef ( 10.f+i, 0.f, 0.f, 1.f );
+
+	glTranslatef (testex, testey, 0.f);
 	glBegin(GL_TRIANGLES);      
 	glVertex2f(-0.1f, 0.f);
 	glVertex2f(0.1f, 0.f);
@@ -100,7 +126,7 @@ glPushMatrix ( ); // (salva a matrix) para mover o objeto independente do resto 
 	glEnd();	
 
 glPopMatrix ( ); // (carrega a ultima matrix salva) volta para o resto da cena
-                 	
+         	
 
             
            // glPopMatrix();
