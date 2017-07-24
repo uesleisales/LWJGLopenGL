@@ -14,6 +14,7 @@ int SCREEN_WIDTH = 640;
 int SCREEN_HEIGHT = 480;
 int SCREEN_FPS = 60;
 
+public static float i= 1.f;  
     public Desafio01(){
    
         if (!glfwInit()) {
@@ -83,13 +84,24 @@ int SCREEN_FPS = 60;
             glRotatef(0.01f,0.0f,0.0f,1.0f); 
             glTranslatef(0.f , 0.f , 1.f);
             */
-            glBegin(GL_TRIANGLES);      
-            glVertex2f(-0.1f, 0.f);
-            glVertex2f(0.1f, 0.f);
-            glVertex2f(0.f, 0.2f); 
-            glEnd();
-        	
-          
+      
+            if (i<300.f){
+        		i+=0.01f;
+        	}     
+            
+glPushMatrix ( ); // (salva a matrix) para mover o objeto independente do resto da cena 
+
+	glRotatef ( 10.f+i, 0.f, 0.f, 1.f );
+	
+	glBegin(GL_TRIANGLES);      
+	glVertex2f(-0.1f, 0.f);
+	glVertex2f(0.1f, 0.f);
+	glVertex2f(0.f, 0.2f); 
+	glEnd();	
+
+glPopMatrix ( ); // (carrega a ultima matrix salva) volta para o resto da cena
+                 	
+
             
            // glPopMatrix();
             
