@@ -60,7 +60,7 @@ public static float testex= 0;
         while (!glfwWindowShouldClose(win)) {      
        
         	Calendar cal = Calendar.getInstance();        	 
-        	cal.setTimeZone(TimeZone.getTimeZone("GMT-03:00"));
+        	//cal.setTimeZone(TimeZone.getTimeZone("GMT-03:00"));
         	int hours = cal.get(Calendar.HOUR_OF_DAY);
         	int minutes = cal.get(Calendar.MINUTE);
         	int seconds = cal.get(Calendar.SECOND);
