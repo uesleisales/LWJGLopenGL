@@ -12,6 +12,7 @@ import static org.lwjgl.stb.STBImage.stbi_load;
 
 import java.util.Calendar;
 //import java.util.Date;
+//System.currentTimeMillis();
 
 
 public class Desafio02{ 
