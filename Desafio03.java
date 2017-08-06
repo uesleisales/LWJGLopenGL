@@ -26,6 +26,9 @@ public class Desafio03 {
 
 	public static float coordX = 0.f;
 	public static float coordY = 0.f;
+	
+	public static float velocidade = 0.006f;
+	public static float velocidadeM = 0.0003f;
 
 	public Desafio03() {
 
@@ -67,10 +70,10 @@ public class Desafio03 {
 
 			if (glfwGetKey(win, GLFW_KEY_D) == GL_TRUE) {
 
-				coordX += 0.0001;
+				coordX += velocidadeM;
 				glTranslatef(coordX, coordY, 0.f);
 
-				i += 0.001;
+				i += velocidade;
 
 				if (i >= 1 && i < 2) {
 					auxY = 0.75f;
@@ -156,10 +159,10 @@ public class Desafio03 {
 
 			if (glfwGetKey(win, GLFW_KEY_A) == GL_TRUE) {
 
-				coordX -= 0.0001;
+				coordX -= velocidadeM;
 				glTranslatef(coordX, coordY, 0.f);
 
-				i += 0.001;
+				i += velocidade;
 
 				if (i >= 1 && i < 2) {
 					auxY = 0.5f;
@@ -246,20 +249,20 @@ public class Desafio03 {
 			if (glfwGetKey(win, GLFW_KEY_W) == GL_TRUE) {
 
 				if (glfwGetKey(win, GLFW_KEY_D) == GL_TRUE) {
-					coordY += 0.0001;
+					coordY += velocidadeM;
 				}
 
 				if (glfwGetKey(win, GLFW_KEY_A) == GL_TRUE) {
-					coordY += 0.0001;
+					coordY += velocidadeM;
 				}
 
 				if (glfwGetKey(win, GLFW_KEY_D) == GL_FALSE) {
 					if (glfwGetKey(win, GLFW_KEY_A) == GL_FALSE) {
 
-						coordY += 0.0001;
+						coordY += velocidadeM;
 						glTranslatef(coordX, coordY, 0.f);
 
-						i += 0.001;
+						i += velocidade;
 
 						if (i >= 1 && i < 2) {
 							auxY = 0.25f;
@@ -348,20 +351,20 @@ public class Desafio03 {
 			if (glfwGetKey(win, GLFW_KEY_S) == GL_TRUE) {
 
 				if (glfwGetKey(win, GLFW_KEY_D) == GL_TRUE) {
-					coordY -= 0.0001;
+					coordY -= velocidadeM;
 				}
 
 				if (glfwGetKey(win, GLFW_KEY_A) == GL_TRUE) {
-					coordY -= 0.0001;
+					coordY -= velocidadeM;
 				}
 
 				if (glfwGetKey(win, GLFW_KEY_D) == GL_FALSE) {
 					if (glfwGetKey(win, GLFW_KEY_A) == GL_FALSE) {
 
-						coordY -= 0.0001;
+						coordY -= velocidadeM;
 						glTranslatef(coordX, coordY, 0.f);
 
-						i += 0.001;
+						i += velocidade;
 
 						if (i >= 1 && i < 2) {
 							auxY = 0;
