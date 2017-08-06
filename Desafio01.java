@@ -9,7 +9,7 @@ import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.opengl.GL11.*;
 
 
-public class Desafio01teste{ 
+public class Desafio01{ 
 
 int SCREEN_WIDTH = 640;
 int SCREEN_HEIGHT = 480;
@@ -35,7 +35,7 @@ public static float auxX1= 0;
 
 
 
-    public Desafio01teste(){
+    public Desafio01(){
    
         if (!glfwInit()) {
             System.err.println("Falha ao inicializar GLFW!");
@@ -173,7 +173,7 @@ glEnd();
     }
 
     public static void main(String[] args) {
-        new Desafio01teste();
+        new Desafio01();
     }
 
 }
